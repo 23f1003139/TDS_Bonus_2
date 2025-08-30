@@ -62,9 +62,9 @@ class Ashish {
             this.hideLoadingScreen();
             this.emit('app:initialized');
             this.showWelcomeMessage();
-            console.log(`GyaanSetu v${this.version} initialized successfully`);
+            console.log(`Ashish v${this.version} initialized successfully`);
         } catch (error) {
-            console.error('Failed to initialize GyaanSetu:', error);
+            console.error('Failed to initialize Ashish:', error);
             this.showToast('error', 'Initialization Error', `Failed to start the application: ${error.message || error}`);
             try { this.hideLoadingScreen(); } catch(_) {}
         }
@@ -579,7 +579,7 @@ class Ashish {
             messageEl.className = `message ${message.role}`;
             messageEl.dataset.messageId = message.id;
 
-            const senderName = { user: 'You', assistant: 'GyaanSetu', system: 'System', tool: 'Tool' }[message.role] || message.role;
+            const senderName = { user: 'You', assistant: 'Ashish', system: 'System', tool: 'Tool' }[message.role] || message.role;
             const avatarIcon = { user: 'fa-user', assistant: 'fa-robot', system: 'fa-cog', tool: 'fa-wrench' }[message.role] || 'fa-comment';
 
             // If content is a string and marked exists, render markdown
@@ -996,7 +996,7 @@ class Ashish {
     showWelcomeMessage() {
         const conv = this.state.conversations.get(this.state.currentConversationId);
         if (conv && conv.messages.length === 0) {
-            this.addMessage('assistant', 'Welcome to GyaanSetu! How can I assist you?');
+            this.addMessage('assistant', 'Welcome to Ashish! How can I assist you?');
         }
     }
 
